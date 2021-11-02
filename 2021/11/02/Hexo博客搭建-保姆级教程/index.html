@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content=  >
+    <meta name="keywords" content= Blog,Code >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            Hexo博客搭建(保姆级教程)
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h3 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h3><p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。大家可以进入<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo官网</a>进行详细查看，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p><a target="_blank" rel="noopener" href="https://gitforwindows.org/">Git下载地址</a></p>
+<p><img src="https://i.loli.net/2021/11/02/EtZ2MUAkcPBDbaT.png" alt="image-20211102140326071"></p>
+<p><img src="https://i.loli.net/2021/11/02/pxFzcIR4afdNOVy.png" alt="image-20211102140407180"></p>
+<h3 id="下载安装node-js-npm"><a href="#下载安装node-js-npm" class="headerlink" title="下载安装node.js,npm"></a>下载安装node.js,npm</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js下载地址</a></p>
+<p><img src="https://i.loli.net/2021/11/02/U82PgohaQJMIsGB.png" alt="image-20211102140520328"></p>
+<p>命令行node -v 和 npm -v 检查是否安装成功</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>如果太慢可以使用淘宝镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Hexo使用"><a href="#Hexo使用" class="headerlink" title="Hexo使用"></a>Hexo使用</h3><h5 id="新建站点"><a href="#新建站点" class="headerlink" title="新建站点"></a>新建站点</h5><p>初始化hexo，注意一定要找个空的文件夹，叫什么自己定我的是blog</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>出现以下结果可以说配置完成:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">INFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.git</span><br><span class="line">Cloning into <span class="string">&#x27;C:\Users\12642\Desktop\hexo&#x27;</span>...</span><br><span class="line">remote: Enumerating objects: 9, <span class="keyword">done</span>.</span><br><span class="line">remote: Counting objects: 100% (9/9), <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (7/7), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 77 (delta 4), reused 5 (delta 2), pack-reused 68</span><br><span class="line">Unpacking objects: 100% (77/77), <span class="keyword">done</span>.</span><br><span class="line">Submodule <span class="string">&#x27;themes/landscape&#x27;</span> (https://github.com/hexojs/hexo-theme-landscape.git) registered <span class="keyword">for</span> path <span class="string">&#x27;themes/landscape&#x27;</span></span><br><span class="line">Cloning into <span class="string">&#x27;C:/Users/12642/Desktop/hexo/themes/landscape&#x27;</span>...</span><br><span class="line">remote: Enumerating objects: 33, <span class="keyword">done</span>.</span><br><span class="line">remote: Counting objects: 100% (33/33), <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (29/29), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 929 (delta 12), reused 15 (delta 3), pack-reused 896</span><br><span class="line">Receiving objects: 100% (929/929), 2.56 MiB | 30.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (492/492), <span class="keyword">done</span>.</span><br><span class="line">Submodule path <span class="string">&#x27;themes/landscape&#x27;</span>: checked out <span class="string">&#x27;73a23c51f8487cfcd7c6deec96ccc7543960d350&#x27;</span></span><br><span class="line">[32mINFO [39m Install dependencies</span><br><span class="line">npm WARN deprecated core-js@1.2.7: core-js@&lt;2.6.8 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.</span><br><span class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@1.2.9: wanted &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;darwin&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;any&quot;</span>&#125; (current: &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;win32&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;x64&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">added 340 packages from 500 contributors and audited 6879 packages <span class="keyword">in</span> 550.574s</span><br><span class="line">found 0 vulnerabilities</span><br><span class="line"></span><br><span class="line">INFO  Start blogging with Hexo!</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="发布第一篇博客"><a href="#发布第一篇博客" class="headerlink" title="发布第一篇博客"></a>发布第一篇博客</h5><p>生成博客，会默认生成一篇hello <a target="_blank" rel="noopener" href="http://word.md/">word.md</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>然后hexo会开始生成博客，生成结束后，会多出一个public的文件夹，这个文件夹就是hexo生成的一个完整的静态网站，也就是我们的博客。网站生成好了，我们要浏览它，所以要开启一下服务器，运行命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>然后打开浏览器，输入 localhost:4000 就可以浏览我们的博客了</p>
+<p><img src="https://i.loli.net/2021/11/02/rVoME4DKJYBAygq.png" alt="image-20211102141712668"></p>
+<h3 id="访问github慢或连不上"><a href="#访问github慢或连不上" class="headerlink" title="访问github慢或连不上"></a>访问github慢或连不上</h3><p>打开这个网站 <a target="_blank" rel="noopener" href="http://tool.chinaz.com/dns">http://tool.chinaz.com/dns</a></p>
+<p>将github.com、github.global.ssl.fastly.net分别输入进去拿到最稳定的ip</p>
+<p>打开C:\Windows\System32\drivers\etc\hosts，在最后添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">52.69.186.44  github.com</span><br><span class="line">173.252.110.21 github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="部署到远端github"><a href="#部署到远端github" class="headerlink" title="部署到远端github"></a>部署到远端github</h3><p>远程部署指的是，博客在我们本地生成好了以后部署到远程仓库去，如果远程仓库支持pages服务的话，那就可以通过这样的方法发布和更新博客。</p>
+<p>申请账号就不演示了</p>
+<p>新建一个分支，我这里是已经建完这个分支了所以他提示我已存在，这里仅做演示</p>
+<p><img src="https://i.loli.net/2021/11/02/CkzUIorliAeLG7H.png" alt="image-20211102142009702"></p>
+<p>回到新建的文件夹，要使用远程部署需要先安装hexo-deployer-git，注意，这是适用于git类型仓库的方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>安装好hexo-deployer-git后，修改博客目录配置文件(_config.yml)中的deploy字段：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git仓库项目地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">自定义提交说明，这个字段可以没有</span></span><br></pre></td></tr></table></figure>
+
+<p>这里放一下本人的配置可结合上面分支的截图对比参考</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/blanks-svg/blanks-svg.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>hexo的git仓库名字要和github用户名一样</li>
+<li>如果git仓库是ssh，则需要生成.ssh</li>
+</ul>
+<p>修改完配置文件后直接部署：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>如果访问出现404，可以查看该博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq32933432/article/details/87955133">hexo远端部署访问404解决方案</a></p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>更换 Hexo 主题非常容易，只要在 <code>themes</code> 文件夹内，新增一个任意名称的文件夹，并修改 <code>_config.yml</code> 内的 <code>theme</code> 设定，即可切换主题</p>
+<h5 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h5><p>到主题的 GitHub 主页下，复制地址</p>
+<p><img src="https://i.loli.net/2021/11/02/t4YCQAPLoMierGx.png" alt="image-20211102142906056"></p>
+<p>进入themes文件夹 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 刚才复制的地址</span><br></pre></td></tr></table></figure>
+
+<p>注意这里最后一个/后是主题名，将解压后的文件夹改成主题名</p>
+<h5 id="使用主题"><a href="#使用主题" class="headerlink" title="使用主题"></a>使用主题</h5><p>修改博客根目录下的 <code>_config.yml</code> 文件，注释掉原来的 theme 并新增一句 theme: 主题名 （注意冒号后面有空格）</p>
+<p>主题名就是刚才新建的文件夹名称</p>
+<h5 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 预览效果</p>
+<h5 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>访问地址就是</p>
+<p><img src="https://i.loli.net/2021/11/02/kgiTsArWvobSl3Q.png" alt="image-20211102143425075"></p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Blanks | Theme By <a class="theme-author" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
