@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content=  >
+    <meta name="keywords" content= Blog,Code >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            【Linux】CentOS7下安装JDK
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h3 id="卸载系统自带的OpenJDK以及相关的Java文件"><a href="#卸载系统自带的OpenJDK以及相关的Java文件" class="headerlink" title="卸载系统自带的OpenJDK以及相关的Java文件"></a>卸载系统自带的OpenJDK以及相关的Java文件</h3><p><strong>在终端输入 java - version</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[blanks@Blanks ~]$ java -version</span><br><span class="line">openjdk version <span class="string">&quot;1.8.0_262&quot;</span></span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0_262-b10)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 25.262-b10, mixed mode)</span><br></pre></td></tr></table></figure>
+
+<p>可以看到系统自带的OpenJDK版本信息</p>
+<p><strong>在终端输入 rpm -qa | grep java</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[blanks@Blanks ~]$ rpm -qa | grep java</span><br><span class="line">python-javapackages-3.4.1-11.el7.noarch</span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.262.b10-1.el7.x86_64</span><br><span class="line">java-1.7.0-openjdk-1.7.0.261-2.6.22.2.el7_8.x86_64</span><br><span class="line">tzdata-java-2020a-1.el7.noarch</span><br><span class="line">javapackages-tools-3.4.1-11.el7.noarch</span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.261-2.6.22.2.el7_8.x86_64</span><br><span class="line">java-1.8.0-openjdk-1.8.0.262.b10-1.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>将下面这几个文件删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java-1.8.0-openjdk-headless-1.8.0.262.b10-1.el7.x86_64</span><br><span class="line">java-1.7.0-openjdk-1.7.0.261-2.6.22.2.el7_8.x86_64</span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.261-2.6.22.2.el7_8.x86_64</span><br><span class="line">java-1.8.0-openjdk-1.8.0.262.b10-1.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>进入root，在命令窗口输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps java-1.8.0-openjdk-headless-1.8.0.262.b10-1.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>挨个删除</p>
+<p><strong>检查删除是否成功</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@Blanks blanks]<span class="comment"># java -version</span></span><br><span class="line">bash: java: 未找到命令...</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>如果还没有删除，则用yum -y remove去删除他们</strong></p>
+<h3 id="下载最新JDK"><a href="#下载最新JDK" class="headerlink" title="下载最新JDK"></a>下载最新JDK</h3><p><strong>下载地址为</strong></p>
+<p>当前最新版本下载地址：<a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<p>　　历史版本下载地址：　　<a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">http://www.oracle.com/technetwork/java/javase/archive-139210.html</a>  </p>
+<p><img src="https://i.loli.net/2021/11/03/g6kLEyBFShvcj2O.png" alt="image-20211103102941713"></p>
+<p>通过浏览器下载会默认下载到当前登陆用户的下载目录，<br>例如当前登陆用户是root，那么下载位置为”/root/下载/jdk-8u301-linux-x64.tar.gz”.</p>
+<p><img src="https://i.loli.net/2021/11/03/stJQzCyp867LxSY.png" alt="image-20211103103023780"></p>
+<p><img src="https://i.loli.net/2021/11/03/IGAw9LrYhk8J2Xe.png" alt="image-20211103103138518"></p>
+<p>展示目录下所有文件，查看当前目录路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[blanks@Blanks 下载]$ ls -al</span><br><span class="line">总用量 142116</span><br><span class="line">drwxr-xr-x.  2 blanks blanks        40 11月  3 10:30 .</span><br><span class="line">drwx------. 15 blanks blanks      4096 11月  3 10:32 ..</span><br><span class="line">-rw-rw-r--.  1 blanks blanks 145520298 11月  3 10:28 jdk-8u301-linux-x64.tar.gz</span><br><span class="line">[blanks@Blanks 下载]$ <span class="built_in">pwd</span></span><br><span class="line">/home/blanks/下载</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="解压JDK"><a href="#解压JDK" class="headerlink" title="解压JDK"></a>解压JDK</h3><p><strong>将文件拷贝一份到/usr/java</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@Blanks 下载]<span class="comment"># cp jdk-8u301-linux-x64.tar.gz /usr/java</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>在java目录下，解压JDK压缩文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u301-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>删除JDK压缩包</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f jdk-8u301-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="配置JDK环境变量"><a href="#配置JDK环境变量" class="headerlink" title="配置JDK环境变量"></a>配置JDK环境变量</h3><p><strong>编辑全局变量</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>进入文本编辑状态下，光标走到文件最后一行，键盘按下 i</p>
+<p>在文本的最后一行粘贴如下：</p>
+<p>注意JAVA_HOME=/usr/java/jdk1.8.0_301  就是你自己的目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#java environment</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.8.0_301</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre/lib/rt.jar:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib/dt.jar:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib/tools.jar</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin</span><br></pre></td></tr></table></figure>
+
+<p>键盘 ESC   Shift+Q</p>
+<h3 id="让刚刚设置的环境变量生效并检查是否成功"><a href="#让刚刚设置的环境变量生效并检查是否成功" class="headerlink" title="让刚刚设置的环境变量生效并检查是否成功"></a>让刚刚设置的环境变量生效并检查是否成功</h3><p><strong>让刚刚设置的环境变量生效</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p><strong>检查是否成功</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@Blanks java]<span class="comment"># source /etc/profile</span></span><br><span class="line">[root@Blanks java]<span class="comment"># java -version</span></span><br><span class="line">java version <span class="string">&quot;1.8.0_301&quot;</span></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_301-b09)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.301-b09, mixed mode)</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Blanks | Theme By <a class="theme-author" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
